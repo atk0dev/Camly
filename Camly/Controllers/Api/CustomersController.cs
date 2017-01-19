@@ -3,6 +3,7 @@ using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
+using Glimpse.Core.Tab;
 using Vidly.Dtos;
 using Vidly.Models;
 
@@ -20,6 +21,8 @@ namespace Vidly.Controllers.Api
         // GET /api/customers
         public IHttpActionResult GetCustomers(string query = null)
         {
+            System.Diagnostics.Trace.TraceError("ERROR HERE!!");
+
             var customersQuery = _context.Customers
                 .Include(c => c.MembershipType);
 
